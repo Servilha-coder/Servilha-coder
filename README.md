@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=36&color=00BFFF&width=800&height=100&duration=3000&pause=1000&center=true&vCenter=true&multiline=true&lines=Sérgio+Servilha+de+Oliveira+Filho;Data+Scientist+🔬;ML+Researcher+🔍;Deep+Learning+Expert+🧠;Applied+Research+Scientist+🚀" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=36&color=00BFFF&width=800&height=100&duration=1000&pause=500&center=true&vCenter=true&multiline=true&lines=Sérgio+Servilha+de+Oliveira+Filho;Data+Scientist+🔬;ML+Researcher+🔍;Deep+Learning+Expert+🧠;Applied+Research+Scientist+🚀" alt="Typing SVG" />
 </p>
 
 # 🚀 Tech Stack
