@@ -1,6 +1,6 @@
 # 👋 Hi, I'm **Sérgio**
 
-<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=Data+Engineer+%F0%9F%92%BB;Automation+%26+Scraping+Expert+%F0%9F%A4%96;AI+%26+ML+Scientist+%F0%9F%A7%A0;Bot+Builder+%F0%9F%A4%96;From+Brazil+%F0%9F%87%AA%F0%9F%87%AC" alt="Typing SVG" />
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=28&pause=1000&color=3B82F6&center=true&vCenter=true&width=600&lines=Data+Engineer+%F0%9F%92%BB;Automation+%26+Scraping+Expert+%F0%9F%A4%96;AI+%26+ML+Scientist+%F0%9F%A7%A0;Bot+Builder+%F0%9F%A4%96;From+Brazil+🇧🇷" alt="Typing SVG" />
 # 🚀 Tech Stack
 
 ## 💻 Languages
