@@ -1,8 +1,52 @@
+<div style="text-align: center; font-family: 'Fira Code', monospace; font-size: 36px; color: #39FF14; line-height: 1.2; min-height: 50px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
+  <div id="typing-text"></div>
+  <style>
+    @media (max-width: 768px) {
+      div[style*="text-align: center"] {
+        font-size: 24px;
+      }
+    }
+  </style>
+  <script>
+    const texts = [
+      "Sérgio Servilha de Oliveira Filho",
+      "Data Scientist 🔬",
+      "ML Researcher 🔍",
+      "Deep Learning Expert 🧠",
+      "Applied Research Scientist 🚀"
+    ];
+    let currentTextIndex = 0;
+    let currentCharIndex = 0;
+    let isErasing = false;
+    const typingSpeed = 75; // ms per character
+    const erasingSpeed = 75; // ms per character
+    const pauseTime = 2000; // ms
+    const element = document.getElementById('typing-text');
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&size=36&color=00FF00&width=800&height=100&duration=1000&pause=500&center=true&vCenter=true&multiline=true&lines=Sérgio+Servilha+de+Oliveira+Filho;Data+Scientist+🔬;ML+Researcher+🔍;Deep+Learning+Expert+🧠;Applied+Research+Scientist+🚀" alt="Typing SVG" />
-</p>
+    function typeWriter() {
+      const currentText = texts[currentTextIndex];
+      if (!isErasing) {
+        element.textContent = currentText.substring(0, currentCharIndex + 1);
+        currentCharIndex++;
+        if (currentCharIndex === currentText.length) {
+          isErasing = true;
+          setTimeout(typeWriter, pauseTime);
+          return;
+        }
+      } else {
+        element.textContent = currentText.substring(0, currentCharIndex);
+        currentCharIndex--;
+        if (currentCharIndex < 0) {
+          isErasing = false;
+          currentTextIndex = (currentTextIndex + 1) % texts.length;
+        }
+      }
+      setTimeout(typeWriter, isErasing ? erasingSpeed : typingSpeed);
+    }
 
+    typeWriter();
+  </script>
+</div>
 # 🚀 Tech Stack
 
 ## 💻 Languages
