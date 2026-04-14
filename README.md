@@ -32,10 +32,6 @@
 ![Beautiful Soup](https://img.shields.io/badge/Beautiful%20Soup-FFD43B?style=for-the-badge&logo=python&logoColor=black)
 ![Requests](https://img.shields.io/badge/Requests-2C3E50?style=for-the-badge&logo=python&logoColor=white)
 
-### Specialties:
-- 📊 Data extraction & ETL pipelines
-- ⏰ Scheduled scraping jobs
-- ⚡ High-speed concurrent scraping
 
 ## 🤖 AI & Machine Learning
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
