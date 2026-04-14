@@ -1,52 +1,104 @@
-<div style="text-align: center; font-family: 'Fira Code', monospace; font-size: 36px; color: #39FF14; line-height: 1.2; min-height: 50px; display: flex; align-items: center; justify-content: center; flex-direction: column;">
-  <div id="typing-text"></div>
-  <style>
-    @media (max-width: 768px) {
-      div[style*="text-align: center"] {
-        font-size: 24px;
-      }
-    }
-  </style>
-  <script>
-    const texts = [
-      "Sérgio Servilha de Oliveira Filho",
-      "Data Scientist 🔬",
-      "ML Researcher 🔍",
-      "Deep Learning Expert 🧠",
-      "Applied Research Scientist 🚀"
-    ];
-    let currentTextIndex = 0;
-    let currentCharIndex = 0;
-    let isErasing = false;
-    const typingSpeed = 75; // ms per character
-    const erasingSpeed = 75; // ms per character
-    const pauseTime = 2000; // ms
-    const element = document.getElementById('typing-text');
-
-    function typeWriter() {
-      const currentText = texts[currentTextIndex];
-      if (!isErasing) {
-        element.textContent = currentText.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-        if (currentCharIndex === currentText.length) {
-          isErasing = true;
-          setTimeout(typeWriter, pauseTime);
-          return;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typewriter Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            font-family: monospace;
+            color: #39FF14;
         }
-      } else {
-        element.textContent = currentText.substring(0, currentCharIndex);
-        currentCharIndex--;
-        if (currentCharIndex < 0) {
-          isErasing = false;
-          currentTextIndex = (currentTextIndex + 1) % texts.length;
+        svg {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
         }
-      }
-      setTimeout(typeWriter, isErasing ? erasingSpeed : typingSpeed);
-    }
+        text {
+            font-size: 36px;
+            fill: #39FF14;
+        }
+        .cursor {
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        @media (max-width: 768px) {
+            text {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <svg viewBox="0 0 800 100">
+        <text id="typewriter-text" x="50%" y="50%" text-anchor="middle" dominant-baseline="middle"></text>
+    </svg>
 
-    typeWriter();
-  </script>
-</div>
+    <script>
+        const texts = [
+            "Sérgio Servilha de Oliveira Filho",
+            "Data Scientist 🔬",
+            "ML Researcher 🔍",
+            "Deep Learning Expert 🧠",
+            "Applied Research Scientist 🚀"
+        ];
+        const textElement = document.getElementById('typewriter-text');
+        let textIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+
+        function typeWriter() {
+            const currentText = texts[textIndex];
+            if (!isDeleting) {
+                textElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                if (charIndex === currentText.length) {
+                    isDeleting = true;
+                    setTimeout(typeWriter, pauseTime);
+                    return;
+                }
+            } else {
+                textElement.textContent = currentText.substring(0, charIndex);
+                charIndex--;
+                if (charIndex < 0) {
+                    isDeleting = false;
+                    textIndex = (textIndex + 1) % texts.length;
+                    setTimeout(typeWriter, 500);
+                    return;
+                }
+            }
+            setTimeout(typeWriter, isDeleting ? deletingSpeed : typingSpeed);
+        }
+
+        // Add blinking cursor
+        function addCursor() {
+            const cursor = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            cursor.setAttribute('x', '50%');
+            cursor.setAttribute('y', '50%');
+            cursor.setAttribute('text-anchor', 'middle');
+            cursor.setAttribute('dominant-baseline', 'middle');
+            cursor.setAttribute('class', 'cursor');
+            cursor.textContent = '|';
+            textElement.parentNode.appendChild(cursor);
+        }
+
+        addCursor();
+        typeWriter();
+    </script>
+</body>
+</html>
 # 🚀 Tech Stack
 
 ## 💻 Languages
